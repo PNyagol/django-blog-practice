@@ -1,0 +1,53 @@
+<style>
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    background: #f9fafb;
+    margin: 0;
+    padding: 1.5rem;
+}
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+h1 {
+    color: #0f3d70;
+    margin-bottom: 1rem;
+}
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+li {
+    margin-bottom: 0.75rem;
+    padding: 0.7rem 0.8rem;
+    border-bottom: 1px solid #e9ecef;
+}
+a {
+    color: #1356d8;
+    text-decoration: none;
+    font-size: 1.05rem;
+}
+a:hover {
+    color: #193f8a;
+    text-decoration: underline;
+}
+</style>
+
+<div class="container">
+    <h1>Blog Posts</h1>
+    <ul>
+        {% for post in posts %}
+            <li>
+                <a href="{% url 'blog:post_detail' slug=post.slug %}">{{ post.title }}</a>
+            </li>
+        {% empty %}
+            <li>No posts yet.</li>
+        {% endfor %}
+    </ul>
+</div>
