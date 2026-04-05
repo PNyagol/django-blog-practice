@@ -37,10 +37,37 @@ a:hover {
     color: #193f8a;
     text-decoration: underline;
 }
+.upload-btn {
+    background-color: #28a745;
+    color: white;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+}
+.upload-btn:hover {
+    background-color: #218838;
+    color: white;
+    text-decoration: none;
+}
+.header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
 </style>
 
 <div class="container">
-    <h1>Blog Posts</h1>
+    <div class="header-row">
+        <h1>Blog Posts</h1>
+        <a href="{% url 'blog:upload_avatar' %}" class="upload-btn">Upload Avatar</a>
+    </div>
     <ul>
         {% for post in posts %}
             <li>

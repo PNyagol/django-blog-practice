@@ -1,8 +1,15 @@
 from pathlib import Path
+import os
 
 # Base directory for the project
 
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+# User-uploaded files go here
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# The URL that points to the above location
+MEDIA_URL = '/media/'
 
 # Keep this secret key secure (use environment variables in production)
 
@@ -76,7 +83,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'blog.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'blog.sqlite3'),
     }
 }
 
