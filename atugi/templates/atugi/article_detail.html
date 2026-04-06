@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ article.title }}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'atugi/css/style.css' %}">
+</head>
+<body>
+    <h1>{{ article.title }}</h1>
+    <p>{{ article.content }}</p>
+    <p>Created: {{ article.created }}</p>
+    <a href="{% url 'article_list' %}" class="btn">Back to Articles</a>
+    <a href="{% url 'article_edit' article.pk %}" class="btn">Edit</a>
+    <a href="{% url 'article_delete' article.pk %}" class="btn btn-danger">Delete</a>
+</body>
+</html>

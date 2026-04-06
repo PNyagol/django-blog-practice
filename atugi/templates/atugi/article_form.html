@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% if form.instance.pk %}Edit{% else %}Create{% endif %} Article</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'atugi/css/style.css' %}">
+</head>
+<body>
+    <h1>{% if form.instance.pk %}Edit{% else %}Create{% endif %} Article</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
+    <a href="{% url 'article_list' %}" class="btn">Cancel</a>
+</body>
+</html>

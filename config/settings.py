@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog',
+    'atugi',
 ]
 
 
@@ -123,3 +124,8 @@ USE_TZ = True
 
 # Static files URL
 STATIC_URL = 'static/'
+
+# Static files directories
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
