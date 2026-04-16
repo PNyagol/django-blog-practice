@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}Contact Us{% endblock %}
+
+{% block content %}
+<h1>Contact Us</h1>
+<form method="post" novalidate>
+    {% csrf_token %}
+    <div>
+        {{ form.name.label_tag }}<br>
+        {{ form.name }}
+        {% if form.name.errors %}
+            <div class="error">{{ form.name.errors }}</div>
+        {% endif %}
+    </div>
+
+    <div>
+        {{ form.email.label_tag }}<br>
+        {{ form.email }}
+        {% if form.email.errors %}
+            <div class="error">{{ form.email.errors }}</div>
+        {% endif %}
+    </div>
+
+    <div>
+        {{ form.message.label_tag }}<br>
+        {{ form.message }}
+        {% if form.message.errors %}
+            <div class="error">{{ form.message.errors }}</div>
+        {% endif %}
+    </div>
+
+    <button type="submit">Send Message</button>
+</form>
+{% endblock %}

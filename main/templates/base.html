@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Site{% endblock %}</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 24px; background: #f9f9f9; }
+        header { background: #333; color: #fff; padding: 12px 24px; }
+        nav a { color: #fff; margin-right: 16px; text-decoration: none; }
+        main { background: #fff; padding: 24px; margin-top: 16px; border-radius: 6px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+        .error { color: #c62828; margin-top: 4px; }
+        label { display: block; margin-bottom: 6px; font-weight: bold; }
+        input, textarea { width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; margin-bottom: 12px; }
+        button { padding: 10px 18px; background: #1976d2; color: #fff; border: none; border-radius: 4px; cursor: pointer; }
+        button:hover { background: #1565c0; }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/main/">Contact</a>
+            <a href="/blog/">Blog</a>
+        </nav>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+</body>
+</html>
